@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أطباؤنا - مستشفى الشفاء</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+      <!-- شريط التنقل -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-hospital-alt"></i>
+        <span>مستشفى الشفاء</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="doctors.html" class="nav-link active">الأطباء</a>
+        <a href="services.html" class="nav-link">الخدمات</a>
+        <a href="news.html" class="nav-link">الأخبار</a>
+      </div>
+    </div>
+  
+    <!-- قائمة الجوال -->
+    <div class="mobile-menu">
+        <a href="index.html" class="mobile-nav-link active">الرئيسية</a>
+        <a href="doctors.html" class="mobile-nav-link">الأطباء</a>
+        <a href="services.html" class="mobile-nav-link">خدماتنا</a>
+        <a href="news.html" class="mobile-nav-link">الأخبار</a>
+        <a href="login.html" class="mobile-nav-link">تسجيل الدخول</a>
+      </div>
+    </nav>
+  
+  <br>
+  <br><br>
+    <header>
+        <h1>فريق الأطباء لدينا</h1>
+        <p>خبراء في مختلف التخصصات الطبية</p>
+    </header>
+   
+    
+    <div class="main-content">
+        <div id="doctorsContainer" class="text-center"></div>
+    </div>
+
+    <script>
+        const doctorsData = {
+            "doctors": [
+                {
+                    "id": 1,
+                    "name": "د. أحمد محمد",
+                    "specialization": "جراحة القلب",
+                    "experience": "15 سنة",
+                    "description": "استشاري جراحة القلب والأوعية الدموية، حاصل على البورد الأمريكي في جراحة القلب.",
+                    "image": "images/doctor-male.webp"
+                },
+                {
+                    "id": 2,
+                    "name": "د. سارة عبد الله",
+                    "specialization": "طب الأطفال",
+                    "experience": "10 سنوات",
+                    "description": "استشارية طب الأطفال وحديثي الولادة، متخصصة في أمراض الجهاز التنفسي عند الأطفال.",
+                    "image": "images/doctor-female.webp"
+                },
+                {
+                    "id": 3,
+                    "name": "د. خالد حسن",
+                    "specialization": "جراحة العظام",
+                    "experience": "20 سنة",
+                    "description": "استشاري جراحة العظام والمفاصل، متخصص في جراحات العمود الفقري والمناظير الجراحية.",
+                    "image": "images/doctor-male.webp"
+                },
+                {
+                    "id": 4,
+                    "name": "د. مريم علي",
+                    "specialization": "طب النساء والتوليد",
+                    "experience": "12 سنة",
+                    "description": "استشارية النساء والتوليد والعقم، متخصصة في جراحات المناظير النسائية والحقن المجهري.",
+                    "image": "images/doctor-female.webp"
+                },
+                {
+                    "id": 5,
+                    "name": "د. محمد أمين",
+                    "specialization": "جراحة العظام",
+                    "experience": "20 سنة",
+                    "description": "استشاري جراحة العظام والمفاصل، متخصص في جراحات العمود الفقري والمناظير الجراحية.",
+                    "image": "images/doctor-male.webp"
+                },
+                {
+                    "id": 6,
+                    "name": "د. يوسف عمرو",
+                    "specialization": "طب الأطفال",
+                    "experience": "19 سنة",
+                    "description": "استشاري طب الأطفال وحديثي الولادة، متخصص في أمراض الجهاز التنفسي عند الأطفال.",
+                    "image": "images/doctor-male.webp"
+                },
+                {
+                    "id": 7,
+                    "name": "د.سعيد أبراهيم",
+                    "specialization":  "طب النساء والتوليد",
+                    "experience": "20 سنة",
+                    "description": "استشاري النساء والتوليد والعقم، متخصص في جراحات المناظير النسائية والحقن المجهري.",
+                    "image": "images/doctor-male.webp"
+                },
+                {
+                    "id": 8,
+                    "name": "د. يوسف هاني",
+                    "specialization":  "جراحة القلب",
+                    "experience": "12 سنة",
+                    "description": "استشاري جراحة القلب والأوعية الدموية، حاصل على البورد الأمريكي في جراحة القلب. ",
+                    "image": "images/doctor-male.webp"
+                },
+            ]
+        };
+
+        function displayDoctors() {
+            const container = document.getElementById('doctorsContainer');
+            
+            doctorsData.doctors.forEach(doctor => {
+                const doctorCard = document.createElement('div');
+                doctorCard.className = 'doctor-card';
+                
+                doctorCard.innerHTML = `
+                    <img src="${doctor.image}" alt="${doctor.name}" class="doctor-img">
+                    <h3>${doctor.name}</h3>
+                    <p><strong>التخصص:</strong> ${doctor.specialization}</p>
+                    <p><strong>الخبرة:</strong> ${doctor.experience}</p>
+                    <p>${doctor.description}</p>
+                `;
+                
+                container.appendChild(doctorCard);
+            });
+        }
+        
+        window.onload = displayDoctors;
+    </script>
+    <script src="js/main.js"></script>
+
+    <footer>
+       
+        <p>© 2025 مستشفى الشفاء. جميع الحقوق محفوظة.</p>  
+      </footer>
+</body>
+</html>

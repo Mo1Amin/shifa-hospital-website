@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماتنا - مستشفى الشفاء</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- شريط التنقل -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-hospital-alt"></i>
+        <span>مستشفى الشفاء</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="doctors.html" class="nav-link">الأطباء</a>
+        <a href="services.html" class="nav-link active">الخدمات</a>
+        <a href="news.html" class="nav-link">الأخبار</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br><br>
+  
+    <h1>خدمات المستشفى</h1>
+    <p>نقدم مجموعة متكاملة من الخدمات الطبية المتخصصة</p>
+
+    <div class="main-content">
+        <div class="service card">
+            <h2 id="toggle-service">خدمة الطوارئ (اضغط للتبديل)</h2>
+            <p id="emergency-content" style="display:none;">
+                قسم الطوارئ لدينا يعمل على مدار 24 ساعة طوال أيام الأسبوع، مجهز بأحدث الأجهزة وطاقم طبي متخصص لاستقبال الحالات الحرجة. نقدم خدمة سريعة وفعالة مع معدل استجابة من بين الأفضل في المنطقة.
+            </p>
+        </div>
+        
+        <div class="service card">
+            <h2 id="fade-service">خدمة العيادات الخارجية (اضغط للتظليل)</h2>
+            <p id="clinic-content">
+                نقدم مجموعة متكاملة من العيادات الخارجية المتخصصة في مختلف التخصصات الطبية، مع مواعيد مرنة وخدمة سريعة. تشمل عياداتنا: الباطنة، الجراحة، الأطفال، النساء والتوليد، العيون، الأنف والأذن والحنجرة، وغيرها الكثير.
+            </p>
+        </div>
+        
+        <div class="card">
+            <h2>تجربة التأثيرات التفاعلية</h2>
+            <p>جرب التأثيرات المختلفة لترى كيف يمكننا جعل تجربة المستخدم أكثر تفاعلية:</p>
+            
+            <div class="mt-3">
+                <button id="animate-btn" class="button">تحريك المربع</button>
+                <button id="fade-toggle-btn" class="button">تبديل التظليل</button>
+                <button id="hide-show-btn" class="button">إظهار/إخفاء</button>
+                <button id="change-color-btn" class="button">تغيير اللون</button>
+            </div>
+            
+            <div id="animation-box" class="mt-3"></div>
+            
+            <div id="message" class="mt-3" style="display: none;">
+                <p>هذه رسالة ظاهرة يمكن إخفاؤها أو إظهارها باستخدام تأثيرات jQuery.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        $(document).ready(function() {
+            // Toggle effect
+            $('#toggle-service').click(function() {
+                $('#emergency-content').toggle('slow');
+            });
+            
+            // FadeToggle effect
+            $('#fade-service').click(function() {
+                $('#clinic-content').fadeToggle(1000);
+            });
+            
+            // Animation button
+            $('#animate-btn').click(function() {
+                $('#animation-box').animate({
+                    left: '+=100px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                }, 1000, function() {
+                    $('#animation-box').animate({
+                        left: '-=100px',
+                        opacity: '1',
+                        height: '100px',
+                        width: '100px'
+                    }, 1000);
+                });
+            });
+            
+            // FadeToggle button
+            $('#fade-toggle-btn').click(function() {
+                $('#animation-box').fadeToggle();
+            });
+            
+            // Hide/Show button
+            $('#hide-show-btn').click(function() {
+                $('#message').toggle('slow');
+            });
+            
+            // Change color button
+            $('#change-color-btn').click(function() {
+                const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                $('#animation-box').css('background-color', randomColor);
+            });
+        });
+    </script>
+    
+    <footer>
+   <p>© 2025 مستشفى الشفاء. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>

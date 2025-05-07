@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأخبار الطبية - مستشفى الشفاء</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+      <!-- شريط التنقل -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-hospital-alt"></i>
+        <span>مستشفى الشفاء</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="doctors.html" class="nav-link">الأطباء</a>
+        <a href="services.html" class="nav-link">الخدمات</a>
+        <a href="news.html" class="nav-link active">الأخبار</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br><br>
+
+    <header>
+        <h1>آخر الأخبار الطبية</h1>
+        <p>تابع أحدث التطورات في مجال الرعاية الصحية</p>
+    </header>
+    <br>
+    <div class="main-contentn">
+        <div class="news-item">
+            <div class="news-title">اكتشاف دواء جديد لعلاج السكري</div>
+            <div class="news-content">
+                <p>أعلن فريق من الباحثين في مستشفى الشفاء عن اكتشاف دواء جديد لعلاج مرض السكري من النوع الثاني. الدواء الجديد أثبت فعالية كبيرة في التجارب السريرية مع آثار جانبية محدودة.</p>
+                <p class="mt-2"><strong>تاريخ النشر:</strong> 15 مايو 2023</p>
+            </div>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-title">افتتاح قسم جديد للعلاج الطبيعي</div>
+            <div class="news-content">
+                <p>افتتح مستشفى الشفاء قسمًا جديدًا للعلاج الطبيعي مجهزًا بأحدث الأجهزة العالمية. القسم يقدم خدمات متكاملة لعلاج آلام الظهر والمفاصل وإعادة التأهيل بعد العمليات الجراحية.</p>
+                <p class="mt-2"><strong>تاريخ النشر:</strong> 1 مايو 2023</p>
+            </div>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-title">حملة التبرع بالدم السنوية</div>
+            <div class="news-content">
+                <p>ينظم مستشفى الشفاء حملته السنوية للتبرع بالدم تحت شعار "قطرة دم تنقذ حياة". الحملة تستمر لمدة أسبوع وتستقبل المتبرعين يوميًا من الساعة 8 صباحًا حتى 8 مساءً.</p>
+                <p class="mt-2"><strong>تاريخ النشر:</strong> 20 أبريل 2023</p>
+            </div>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-title">ندوة علمية عن أمراض القلب</div>
+            <div class="news-content">
+                <p>ينظم مستشفى الشفاء ندوة علمية تحت عنوان "أحدث التطورات في تشخيص وعلاج أمراض القلب" يشارك فيها مجموعة من أبرز أطباء القلب في الوطن العربي.</p>
+                <p class="mt-2"><strong>تاريخ النشر:</strong> 10 أبريل 2023</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.news-title').click(function() {
+                $(this).next('.news-content').slideToggle('slow');
+            });
+        });
+    </script>
+    <br>
+    <br>
+    <br> <br>
+    <br>
+    <footer>
+        <p>© 2025 مستشفى الشفاء. جميع الحقوق محفوظة.</p>
+        </footer>
+</body>
+</html>
