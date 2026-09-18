@@ -875,6 +875,10 @@ footer {
   }
   
   @media (max-width: 768px) {
+    .hero-image {
+      display: none;
+    }
+
     .nav-links {
       display: none;
     }
@@ -927,4 +931,13 @@ footer {
     .scroll-to-top {
       right: 1rem;
     }
+  }
+  /* Images never wider than their card, so phones do not scroll sideways. */
+  .doctor-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  html, body {
+    overflow-x: hidden;
   }
